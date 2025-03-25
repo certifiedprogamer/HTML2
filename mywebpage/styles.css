@@ -1,0 +1,30 @@
+.tableimg {
+    max-width: 400px;
+    max-height: 500px;
+}
+th,
+      td {
+        padding: 25px;
+      }
+      th {
+        background-color: black;
+        color: white;
+        border: 1px;
+        border-right-style: solid;
+      }
+      tr {
+        border: 1px;
+        border-style: solid;
+      }
+      td {
+        border: 1px;
+        border-right-style: solid;
+        padding: 2px 25px;
+      }
+
+      table {
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        text-align: center;
+      }

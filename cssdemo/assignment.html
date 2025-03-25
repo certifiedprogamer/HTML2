@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      th {
+        background-color: green;
+        color: white;
+        border: 1px;
+        border-right-style: solid;
+      }
+
+      tr {
+        border: 1px;
+        border-style: solid;
+      }
+
+      .title {
+        font-weight: bold;
+        text-align: left;
+        padding-left: 2px;
+      }
+
+      .gross {
+        text-align: right;
+        padding-right: 8px;
+      }
+
+      .shaded > td {
+        background-color: lightgray;
+      }
+
+      td {
+        border: 1px;
+        border-right-style: solid;
+        padding: 2px 25px;
+      }
+
+      table {
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      Top 5 Grossing Animated Films of All Time
+    </h1>
+    <table>
+      <tr>
+        <th style="text-align: left; padding-left: 2px">Film Title</th>
+        <th>Released</th>
+        <th>Studio</th>
+        <th>Worldwide Gross</th>
+        <th>Domestic Gross</th>
+        <th>International Gross</th>
+        <th>Budget</th>
+      </tr>
+      <tr>
+        <td class="title">The Lion King (2019 remake)</td>
+        <td>2019</td>
+        <td>Disney</td>
+        <td class="gross">$1,657,870,986</td>
+        <td class="gross">$543,638,043</td>
+        <td class="gross">$1,114,232,943</td>
+        <td class="gross">$260,000,000</td>
+      </tr>
+      <tr class="shaded">
+        <td class="title">Frozen II</td>
+        <td>2019</td>
+        <td>Disney</td>
+        <td class="gross">$1,450,026,933</td>
+        <td class="gross">$477,373,578</td>
+        <td class="gross">$972,653,355</td>
+        <td class="gross">$150,000,000</td>
+      </tr>
+      <tr>
+        <td class="title">Frozen</td>
+        <td>2013</td>
+        <td>Disney</td>
+        <td class="gross">$1,281,019,275</td>
+        <td class="gross">$400,953,009</td>
+        <td class="gross">$880,066,266</td>
+        <td class="gross">$150,000,000</td>
+      </tr>
+      <tr class="shaded">
+        <td class="title">Incredibles 2</td>
+        <td>2018</td>
+        <td>Disney Pixar</td>
+        <td class="gross">$1,243,089,244</td>
+        <td class="gross">$608,581,744</td>
+        <td class="gross">$634,507,500</td>
+        <td class="gross">$200,000,000</td>
+      </tr>
+      <tr>
+        <td class="title">Minions</td>
+        <td>2015</td>
+        <td>Universal</td>
+        <td class="gross">$1,159,444,662</td>
+        <td class="gross">$336,045,770</td>
+        <td class="gross">$823,398,892</td>
+        <td class="gross">$74,000,000</td>
+      </tr>
+    </table>
+    <p style="text-align: center">
+      Sources:
+      <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a> &
+      <a href="https://www.boxofficemojo.com/" target="_blank"
+        >Box Office Mojo</a
+      >. Data is current as of March 31 2021
+    </p>
+  </body>
+</html>

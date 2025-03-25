@@ -1,0 +1,65 @@
+h1 {
+    color: blue;
+}
+
+#themSpaniards {
+    color: green;
+    size: 3em;
+}
+
+.themBrits {
+    color: red;
+}
+
+input:focus{
+    border: 1px solid;
+    border-color: chartreuse;
+    outline: none;
+}
+
+/* elements in the americans div inherit rules that are text related. 
+They dont inherit rules that are box related */
+
+#Americans {
+    font-weight: bold; /*text related rule */
+    padding:  50px;
+    border: 1px solid black; /*border and padding are both box related */
+    background: linear-gradient(to right, red, white, blue);
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px gray;
+}
+
+/* > only targets direct children with the selector */
+
+#peopleFromEnglandDiv  p{
+    color: purple;
+}
+
+#peopleFromEnglandDiv > p{
+    font-style: italic;
+    color:orange;
+}
+
+/* Sibling selectors select the next element that meets the selector */
+
+#ringo + p{
+    color: brown;
+    transform: rotate(180deg);
+    text-align: right;
+}
+
+#ringo{
+    text-shadow: 20px 20px 2px rgba(0, 0, 0, 0.5);
+}
+/* Pseudo Selectors */
+/* First Child */
+
+p:first-child{
+    font-size: 6em;
+}
+
+p:hover{
+    background-color: yellow;
+    cursor: pointer;
+}
+
