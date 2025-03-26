@@ -28,3 +28,20 @@ th,
         border-collapse: collapse;
         text-align: center;
       }
+#evilHeader:hover{
+  background: linear-gradient(to bottom, red, yellow);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+}
+
+#dope {
+  transition: transform .7s ease-in-out;
+}
+#dope:hover {
+  transform: rotate(360deg);
+}
+
+p::first-letter{
+  font-size: xx-large;
+}
