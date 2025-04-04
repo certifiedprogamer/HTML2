@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+}
+
+header{
+    grid-area: header;
+    color: white;
+    text-align: center;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+footer{
+    grid-area: footer;
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 2;
+}
+
+aside{
+    grid-area: sidebar;
+    background-color: lightgray;
+}
+
+main{
+    grid-area: main;
+    background-color: beige;
+    overflow: auto;
+}
+
+main, aside{
+    padding: 15px;
+}
+
+.box-model-example {
+    background-color: yellow;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 20px;
+
+}
+
+.float-image{
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: green;
+}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.flex-item{
+    background: aquamarine;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    flex-basis: 30%;
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.flex-demo{
+    display: flex;
+    align-items: stretch;
+    align-content: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 20px, 0;
+    height: 150px;
+    flex-wrap: wrap;
+}
+
+.position-demo{
+    position: relative;
+    height: 150px;
+    background-color: darksalmon;
+    margin: 20px;
+    padding: 10px;
+}
+
+.absolute-box{
+    position: absolute;
+    background-color: lightblue;
+    padding: 10px;
+    top: 70px;
+    left: 40%;
+}
+
+.sizing-demo{
+    width: 50%; 
+    height: 20vh;
+    background-color: red;
+    margin: 20px;
+    padding: 10px;
+}
+
+.overflow-demo{
+    width: 300px;
+    height: 100px;
+    overflow: auto;
+}
