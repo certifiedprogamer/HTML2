@@ -2,6 +2,26 @@
     box-sizing: border-box;
 }
 
+.title {
+    text-align: center;
+    color: white;
+  }
+  img {
+    margin: auto;
+    text-align: center;
+  }
+  .container {
+    position: relative;
+    height: 50vh; /* Adjust as needed */
+  }
+  .centered-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%; /* Optional: ensures the image scales properly */
+  }
+
 body{
     margin: 0;
     background: linear-gradient(to bottom, blue, black);;
