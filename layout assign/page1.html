@@ -3,37 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Three random pages (1)</title>
     <link rel="stylesheet" href="styles1.css" />
-    <style></style>
+    <style>
+      body {
+        margin: 0;
+        background: linear-gradient(to top, black, green);
+      }
+
+      .shatter {
+        position: absolute;
+        animation: shatterAnimation 1s forwards;
+      }
+
+      @keyframes shatterAnimation {
+        0% {
+          transform: scale(1) translate(0, 0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0.3) translate(300px, 300px);
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="grid-container">
       <header>
-        <h1>:(</h1>
+        <h1>Me lon</h1>
       </header>
       <aside>
-        <div class="side-flex">page 1</div>
-        <div class="side-flex">page 2</div>
-        <div class="side-flex">page 3</div>
+        <div class="side-flex"><a href="./page1.html">page 1</a></div>
+        <div class="side-flex"><a href="./page2.html">page 2</a></div>
+        <div class="side-flex"><a href="./page3.html">page 3</a></div>
       </aside>
       <main>
-        <section class="main-flex">
-          <h1 class="title">In Memoriam of John Dope</h1>
-          <h2 class="title">Loved by absolutely no one</h2>
-        </section>
-        <div class="container">
+        <div class="image-container">
           <img
+            id="shatterImage"
             class="centered-image"
-            src="./resources/image.png"
-            alt="the john dope goes here"
+            src="./resources/melon.jpg"
+            alt="melon"
           />
         </div>
-        <section class="flex-demo">
-          <div class="main-flex">He will be missed</div>
-          <div class="main-flex">This is so sad guys</div>
-        </section>
       </main>
     </div>
+    <script src="shatterscript.js"></script>
   </body>
 </html>

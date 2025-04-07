@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three random pages (2)</title>
+    <link rel="stylesheet" href="styles1.css" />
+    <script>
+      function expandImage() {
+        const image = document.querySelector(".centered-image");
+        image.classList.add("expanded");
+
+        // Play the sound
+        const sound = document.querySelector("#expand-sound");
+        sound.play();
+
+        // Disable clicking on any other elements by adding a full-screen overlay
+        const overlay = document.createElement("div");
+        overlay.style.position = "fixed";
+        overlay.style.top = "0";
+        overlay.style.left = "0";
+        overlay.style.width = "100vw";
+        overlay.style.height = "100vh";
+        overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
+        overlay.style.zIndex = "3";
+        document.body.appendChild(overlay);
+
+        // Prevent the user from interacting with the overlay
+        overlay.addEventListener("click", function () {
+          image.classList.remove("expanded");
+          document.body.removeChild(overlay);
+        });
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        background: linear-gradient(to top, black, purple);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>
+        <h1>wega</h1>
+      </header>
+      <aside>
+        <div class="side-flex"><a href="./page1.html">page 1</a></div>
+        <div class="side-flex"><a href="./page2.html">page 2</a></div>
+        <div class="side-flex"><a href="./page3.html">page 3</a></div>
+      </aside>
+      <main>
+        <div class="image-container">
+          <img
+            class="centered-image"
+            src="./resources/wega.jpg"
+            alt="wega"
+            onclick="expandImage()"
+          />
+        </div>
+      </main>
+    </div>
+
+    <!-- Add the audio element -->
+    <audio
+      id="expand-sound"
+      src="./resources/luigi-burning.mp3"
+      preload="auto"
+    ></audio>
+  </body>
+</html>

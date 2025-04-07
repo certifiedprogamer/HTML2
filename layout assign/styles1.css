@@ -1,33 +1,9 @@
-*{
+
+* {
     box-sizing: border-box;
-}
-
-.title {
-    text-align: center;
-    color: white;
-  }
-  img {
-    margin: auto;
-    text-align: center;
-  }
-  .container {
-    position: relative;
-    height: 50vh; /* Adjust as needed */
-  }
-  .centered-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%; /* Optional: ensures the image scales properly */
   }
 
-body{
-    margin: 0;
-    background: linear-gradient(to bottom, blue, black);;
-}
-
-.grid-container {
+  .grid-container {
     display: grid;
     grid-template-areas:
       "header header header"
@@ -38,89 +14,59 @@ body{
     gap: 10px;
   }
 
-header{
+  header {
     grid-area: header;
     color: white;
     text-align: center;
-    background: linear-gradient(to bottom, black, blue);
     position: sticky;
     top: 0;
     z-index: 2;
-}
+  }
 
-footer{
-    grid-area: footer;
-    background-color: black;
-    color: white;
-    text-align: center;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    z-index: 2;
-}
-
-aside{
+  aside {
     grid-area: sidebar;
     display: flex;
     background-color: gray;
     flex-direction: column;
     justify-content: space-evenly;
-}
+  }
 
-main{
+  main {
     grid-area: main;
-    overflow: auto;
-    height: auto;
-}
-
-.clearfix::after{
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.main-flex{
-    margin: 10px;
-    padding: 5px;
-    text-align: center;
-    flex-basis: 30%;
-    flex-grow: 1;
-    min-width: 200px;
-    color: white;
-}
-
-.img-flex{
-    margin: 30px;
-    padding: 5px;
-    text-align: center;
-    flex-basis: 30%;
-    flex-grow: 1;
-    min-width: 200px;
-}
-
-.side-flex{
-    font-size: xx-large;
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
-    min-width: 200px;
-}
-
-.flex-demo{
     display: flex;
-    align-items: stretch;
-    align-content: center;
-    justify-content: space-between;
-    padding: 10px;
-    margin: 20px, 0;
-    height: 150px;
-    flex-wrap: wrap;
-}
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    overflow: auto;
+  }
 
-.absolute-box{
+  .image-container {
+    position: relative;
+    width: 500px; /* Set the size of the image container */
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .centered-image {
     position: absolute;
-    background-color: lightblue;
-    padding: 10px;
-    top: 70px;
-    left: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Full-screen expanded state */
+.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: rotate(360deg);
+  z-index: 1;
 }
