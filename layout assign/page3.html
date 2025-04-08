@@ -10,7 +10,64 @@
         margin: 0;
         background: linear-gradient(to top, black, white);
       }
+
+      .small-image {
+        width: 100px; /* Width of smaller images */
+        height: 100px; /* Height of smaller images */
+        object-fit: cover;
+        opacity: 1;
+        transition: opacity 1s ease-out;
+        cursor: pointer;
+        position: absolute;
+      }
+
+      /* Fade-out animation for smaller images */
+      .fade-out {
+        opacity: 0;
+      }
     </style>
+    <script>
+      // Function to create smaller images when the main image is clicked
+      function createSmallerImages(event) {
+        const container = document.querySelector(".image-container");
+        const imageUrls = [
+          "./resources/noteboo3.jpg",
+          "./resources/noteboo4.jpg",
+          "./resources/noteboo2.jpg",
+          "./resources/noteboo1.jpg",
+        ]; // Array of images
+
+        const numberOfImages = 10; // Number of smaller images to generate
+
+        // Generate smaller images at random positions
+        for (let i = 0; i < numberOfImages; i++) {
+          // Randomly choose an image from the array
+          const randomImageIndex = Math.floor(Math.random() * imageUrls.length);
+          const randomImage = imageUrls[randomImageIndex];
+
+          const smallerImage = document.createElement("img");
+          smallerImage.src = randomImage;
+          smallerImage.classList.add("small-image");
+
+          // Set random position outside the container bounds
+          const randomX = Math.random() * 150 - 25 + "%"; // Can be outside 0-100% of the container width
+          const randomY = Math.random() * 150 - 25 + "%"; // Can be outside 0-100% of the container height
+          smallerImage.style.left = randomX;
+          smallerImage.style.top = randomY;
+
+          container.appendChild(smallerImage);
+
+          // Add an event listener to make them fade out on click
+          smallerImage.addEventListener("click", function () {
+            smallerImage.classList.add("fade-out");
+            // Remove the image after the fade-out animation completes
+            setTimeout(() => {
+              smallerImage.remove();
+            }, 1000); // Delay for the fade-out animation duration
+          });
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="grid-container">
@@ -25,14 +82,15 @@
       <main>
         <div class="image-container">
           <img
-            id=""
             class="centered-image"
-            src="./resources/melon.jpg"
+            src="./resources/noteboos.jpg"
             alt="melon"
+            onclick="createSmallerImages(event)"
           />
         </div>
       </main>
-    </div>
-    <script src=""></script>
+    </main>
+    <footer style="color: white">collect his noteboos</footer>
+  </div>
   </body>
 </html>
